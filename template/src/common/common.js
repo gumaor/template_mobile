@@ -80,11 +80,8 @@ global.common = {
       cancel && cancel();
     });
   },
-  prompt(msg, title, cb) {
-    vue.$messagebox.prompt(msg, title).then(({
-      value,
-      action
-    }) => {
+  prompt(msg, cb) {
+    vue.$messagebox.prompt(msg, '温馨提示').then(({value}) => {
       cb && cb(value);
     }).catch((action) => {
       //cancel, do nothing...

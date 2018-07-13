@@ -19,7 +19,7 @@ const router = new Router({
 });
 
 router.beforeEach((to, from, next) => {
-  const jump_url = store.get('jump_url');
+  const jump_url = store.pop('jump_url');
   if (jump_url) {
     const [host, path] = jump_url.split('#');
     if (path) {
@@ -35,9 +35,9 @@ router.beforeEach((to, from, next) => {
     } else {
       var key = to.meta.title[0];
       if (to.query[key] > 0) {
-        common.setTitle(to.meta.title[1]);
+        document.title = to.meta.title[1];
       } else {
-        common.setTitle(to.meta.title[2]);
+        document.title = to.meta.title[2];
       }
     }
   }
