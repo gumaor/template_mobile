@@ -28,7 +28,7 @@ import './assets/css/style.css';
 
 /* eslint-disable no-new */
 common.init(() => {
-  new Vue({
+  global.vue = new Vue({
     el: '#app',
     {{#router}}
     router,
