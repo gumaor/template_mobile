@@ -1,7 +1,9 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
+{{#if_not cdn}}
 Vue.use(Router)
+{{/if_not}}
 
 const routes = [
   {path: '/', name: 'Index', component: () => import('./pages/Index.vue'), meta: {title: '古猫移动端'}}

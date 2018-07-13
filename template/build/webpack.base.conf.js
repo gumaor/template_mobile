@@ -15,7 +15,8 @@ module.exports = {
   },
   {{#cdn}}
   externals: {
-    'Vue': 'vue'
+    'vue': 'Vue',
+    'vue-router': 'VueRouter'
   },
   {{/cdn}}
   output: {

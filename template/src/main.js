@@ -11,10 +11,11 @@ import router from './router'
 Vue.config.productionTip = false
 
 // 按需引入mint-ui组件库
-import {MessageBox,Toast,Indicator} from 'mint-ui'
+import {MessageBox, Toast, Indicator, Button} from 'mint-ui'
 Vue.prototype.$messagebox = MessageBox
 Vue.prototype.$toast = Toast
 Vue.prototype.$indicator = Indicator
+Vue.component(Button.name, Button);
 
 // 引入时间处理库
 global.dayjs = require('dayjs');
