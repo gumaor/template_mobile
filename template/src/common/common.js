@@ -6,8 +6,8 @@ global.common = {
   scrollTop: 0,
 
   jumpAuth() {
-    common.setStore("jump_url", window.location.href);
-    common.removeStore('token');
+    store.set('jump_url', window.location.href);
+    store.remove('token');
     window.location.href = common.AUTH_URL;
   },
 

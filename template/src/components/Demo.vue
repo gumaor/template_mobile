@@ -18,7 +18,7 @@ export default {
       common.showLoading();
       setTimeout(() => {
         common.hideLoading();
-      }, 3000);
+      }, 1500);
     },
     toast() {
       common.toast('toast');
