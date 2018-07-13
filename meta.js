@@ -27,6 +27,13 @@ module.exports = {
 
       return options.inverse(this)
     },
+    if_not(v, options) {
+      if (!v) {
+        return options.fn(this)
+      }
+
+      return options.inverse(this)
+    },
     template_version() {
       return templateVersion
     },
