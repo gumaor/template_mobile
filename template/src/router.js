@@ -1,9 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
-{{#if_not cdn}}
-Vue.use(Router)
-{{/if_not}}
 
 const routes = [
   {path: '/', name: 'Index', component: () => import('./pages/Index.vue'), meta: {title: '古猫移动端'}}
@@ -24,10 +21,12 @@ router.beforeEach((to, from, next) => {
   const jump_url = store.pop('jump_url');
   if (jump_url) {
     const [host, path] = jump_url.split('#');
-    if (path) {
-      next(path);
+    if (location.search.indexOf('?r=') != -1) {
+      location.replace(jump_url);
+    } else if (path) {
+      next({path, replace: true});
     } else {
-      next('/');
+      next({path: '/', replace: true});
     }
   }
   // 更新页面标题
