@@ -92,6 +92,11 @@ module.exports = {
       type: 'confirm',
       message: '是否开启CDN加速？',
     },
+    upload: {
+      when: 'isNotTest',
+      type: 'confirm',
+      message: '是否开启七牛图片上传？',
+    },
     autoInstall: {
       when: 'isNotTest',
       type: 'list',
