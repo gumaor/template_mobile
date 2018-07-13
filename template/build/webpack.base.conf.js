@@ -13,6 +13,11 @@ module.exports = {
   entry: {
     app: './src/main.js'
   },
+  {{#cdn}}
+  externals: {
+    'Vue': 'vue'
+  },
+  {{/cdn}}
   output: {
     path: config.build.assetsRoot,
     filename: '[name].js',

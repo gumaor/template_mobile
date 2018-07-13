@@ -80,6 +80,11 @@ module.exports = {
       type: 'confirm',
       message: '是否启用测试环境？',
     },
+    cdn: {
+      when: 'isNotTest',
+      type: 'confirm',
+      message: '是否开启CDN加速？',
+    },
     autoInstall: {
       when: 'isNotTest',
       type: 'list',
